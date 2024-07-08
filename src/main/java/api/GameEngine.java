@@ -5,10 +5,6 @@ import game.Board;
 import game.Move;
 
 public class GameEngine {
-    public static void main(String[] args) {
-
-
-    }
 
     public Board start(String type) {
         if (type.equals("TicTacToe")) {
