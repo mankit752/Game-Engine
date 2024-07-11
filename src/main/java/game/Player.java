@@ -2,6 +2,8 @@ package game;
 
 public class Player {
 
+    private int timeUsedInMillis;
+    private User id;
     private String playerSymbol;
 
     public Player(String playerSymbol) {
@@ -14,5 +16,13 @@ public class Player {
 
     public Player flip() {
         return new Player(playerSymbol.equals("X") ? "X" : "O");
+    }
+
+    public int getTimeUsedInMillis() {
+        return timeUsedInMillis;
+    }
+
+    public void setTimeTaken(int timeInMillis) {
+        timeUsedInMillis += timeInMillis;
     }
 }
