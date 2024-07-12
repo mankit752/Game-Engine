@@ -1,7 +1,6 @@
 package placements;
 
 import boards.TicTacToeBoard;
-import game.Board;
 import game.Cell;
 import game.Move;
 import game.Player;

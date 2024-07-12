@@ -1,4 +1,4 @@
-package game;
+package boards;
 
 public interface Board {
 

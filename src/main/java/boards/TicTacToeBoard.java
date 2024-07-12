@@ -6,16 +6,16 @@ import game.*;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-public class TicTacToeBoard implements Board {
+public class TicTacToeBoard implements CellBoard {
     String[][] cells = new String[3][3];
 
-    public static RuleSet<TicTacToeBoard> getRules() {
+    public static RuleSet getRules() {
         RuleSet rules = new RuleSet();
-        rules.add(new Rule<TicTacToeBoard>(board -> outerTraversal((i, j) -> board.getSymbol(i, j))));
-        rules.add(new Rule<TicTacToeBoard>(board -> outerTraversal((i, j) -> board.getSymbol(j, i))));
-        rules.add(new Rule<TicTacToeBoard>(board -> traverse(i2 -> board.getSymbol(i2, i2))));
-        rules.add(new Rule<TicTacToeBoard>(board -> traverse(i2 -> board.getSymbol(i2, 2 - i2))));
-        rules.add(new Rule<TicTacToeBoard>(board -> {
+        rules.add(new Rule(board -> outerTraversal((i, j) -> board.getSymbol(i, j))));
+        rules.add(new Rule(board -> outerTraversal((i, j) -> board.getSymbol(j, i))));
+        rules.add(new Rule(board -> traverse(i2 -> board.getSymbol(i2, i2))));
+        rules.add(new Rule(board -> traverse(i2 -> board.getSymbol(i2, 2 - i2))));
+        rules.add(new Rule(board -> {
             int countOfFillerCells = 0;
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
