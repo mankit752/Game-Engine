@@ -1,6 +1,7 @@
-package game;
+package api;
 
 import boards.CellBoard;
+import game.GameState;
 
 import java.util.function.Function;
 

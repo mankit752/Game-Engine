@@ -2,7 +2,7 @@ package boards;
 
 public interface Board {
 
-    void move(game.Move move);
+    Board move(game.Move move);
 
     Board copy();
 }

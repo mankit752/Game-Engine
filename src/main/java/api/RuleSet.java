@@ -1,7 +1,5 @@
 package api;
 
-import game.Rule;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

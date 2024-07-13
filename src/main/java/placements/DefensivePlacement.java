@@ -15,7 +15,7 @@ public class DefensivePlacement implements Placement {
     private DefensivePlacement() {
     }
 
-    public static synchronized Placement get() {
+    public static synchronized DefensivePlacement get() {
         defensivePlacement = (DefensivePlacement) Utils.getIfNull(defensivePlacement, DefensivePlacement::new);
         return defensivePlacement;
     }
@@ -36,8 +36,7 @@ public class DefensivePlacement implements Placement {
             for (int j = 0; j < 3; j++) {
                 if (board.getSymbol(i, j) == null) {
                     Move move = new Move(new Cell(i, j), player.flip());
-                    TicTacToeBoard boardCopy = board.copy();
-                    boardCopy.move(move);
+                    board.move(move);
                     if (ruleEngine.getState(board).isOver()) {
                         return new Cell(i, j);
                     }
