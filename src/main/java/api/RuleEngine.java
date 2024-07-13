@@ -21,8 +21,7 @@ public class RuleEngine {
     }
 
     public GameInfo getInfo(CellBoard board) {
-        if (board instanceof TicTacToeBoard) {
-            TicTacToeBoard ticTacToeBoard = (TicTacToeBoard) board;
+        if (board instanceof TicTacToeBoard ticTacToeBoard) {
             GameState gameState = getState(ticTacToeBoard);
             for (Symbol symbol : Symbol.values()) {
                 Player player = new Player(symbol.getMarker());
